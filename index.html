@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Guia Completo para Mulheres Trans — Bianca Nunes</title>
+<style>
+:root{--blue:#55CDFC;--pink:#F7A8B8;--white:#fff;--purple:#8B5CF6;--dark:#1E0A3C;--soft:#F8F4FF;--gold:#F4C842;}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Georgia',serif;background:#0d0d1a;color:#fff;overflow:hidden;}
+#nav{position:fixed;top:0;left:0;right:0;height:52px;background:rgba(13,13,26,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(247,168,184,.2);display:flex;align-items:center;justify-content:space-between;padding:0 16px;z-index:1000;gap:8px;}
+.logo{font-size:11px;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px;text-transform:uppercase;white-space:nowrap;}
+.nav-btns{display:flex;gap:4px;flex-wrap:wrap;overflow:hidden;max-height:40px;}
+.nav-btns button{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;padding:4px 10px;border-radius:20px;cursor:pointer;font-size:11px;transition:all .2s;font-family:sans-serif;white-space:nowrap;}
+.nav-btns button:hover{background:rgba(247,168,184,.2);}
+.nav-btns button.active{background:linear-gradient(135deg,var(--blue),var(--pink));border-color:transparent;color:#1E0A3C;font-weight:700;}
+#pg-ind{font-size:11px;color:rgba(255,255,255,.4);white-space:nowrap;}
+#book{position:fixed;top:52px;left:0;right:0;bottom:56px;overflow:hidden;}
+.page{position:absolute;inset:0;display:none;overflow-y:auto;animation:fadeIn .3s ease;}
+.page.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+#prog{position:fixed;top:52px;left:0;height:3px;background:linear-gradient(90deg,var(--blue),var(--pink));transition:width .3s;z-index:999;}
+
+/* COVER */
+.cover-wrap{background:linear-gradient(145deg,#0d2238,#1E0A3C,#3a0d1e);min-height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.stripe{position:absolute;left:0;right:0;height:10px;display:flex;}
+.stripe.top{top:0;}.stripe.bot{bottom:0;}
+.stripe div{flex:1;}
+.cover-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(ellipse,rgba(85,205,252,.08),transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;}
+.cover-inner{position:relative;z-index:2;display:flex;align-items:center;gap:50px;max-width:1100px;padding:40px;width:100%;}
+.cover-txt{flex:1;}
+.cover-label{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--blue);margin-bottom:12px;font-family:sans-serif;}
+.cover-h1{font-size:clamp(34px,4vw,64px);font-weight:900;line-height:1.05;font-family:sans-serif;}
+.cover-h1 .w1{color:#fff;}.cover-h1 .w2{background:linear-gradient(135deg,var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}.cover-h1 .w3{color:var(--pink);}
+.cover-sub{margin-top:12px;font-size:15px;color:rgba(255,255,255,.65);font-family:sans-serif;line-height:1.55;}
+.cover-author{margin-top:16px;font-size:16px;color:var(--gold);font-family:sans-serif;font-weight:600;letter-spacing:1px;}
+.cover-badges{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px;}
+.badge{padding:4px 11px;border-radius:20px;font-size:10px;font-family:sans-serif;font-weight:700;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff;}
+.cover-cta{margin-top:24px;padding:13px 36px;background:linear-gradient(135deg,var(--blue),var(--pink));border:none;border-radius:50px;font-size:16px;font-weight:700;color:#1E0A3C;cursor:pointer;font-family:sans-serif;transition:all .2s;box-shadow:0 8px 28px rgba(247,168,184,.4);}
+.cover-cta:hover{transform:translateY(-3px);}
+.cover-img{flex-shrink:0;position:relative;}
+.cover-img img{width:280px;height:400px;object-fit:cover;border-radius:22px;box-shadow:0 24px 60px rgba(0,0,0,.6);}
+.cover-img::after{content:'';position:absolute;inset:-4px;border-radius:26px;background:linear-gradient(135deg,var(--blue),var(--pink));z-index:-1;opacity:.5;}
+
+/* CHAPTER */
+.ch-page{background:var(--soft);color:var(--dark);min-height:100%;}
+.ch-hero{padding:48px 56px;color:#fff;position:relative;overflow:hidden;}
+.ch-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(145deg,#1a4a6e,#2d1b4e);}
+.ch-hero::after{content:'';position:absolute;right:-40px;top:-40px;width:280px;height:280px;border-radius:50%;background:rgba(247,168,184,.1);}
+.ch-hero *{position:relative;z-index:1;}
+.ch-num-big{font-size:64px;font-weight:900;color:rgba(255,255,255,.07);font-family:sans-serif;line-height:1;margin-bottom:-12px;}
+.ch-hero h2{font-size:clamp(24px,3.5vw,40px);font-weight:900;font-family:sans-serif;line-height:1.1;}
+.ch-hero h2 span{background:linear-gradient(135deg,var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.ch-hero p{margin-top:10px;font-size:15px;color:rgba(255,255,255,.72);max-width:600px;line-height:1.65;font-family:sans-serif;}
+.ch-body{padding:40px 56px;max-width:960px;}
+.ch-body h3{font-size:20px;font-weight:800;font-family:sans-serif;color:var(--dark);margin:30px 0 10px;padding-left:12px;border-left:4px solid var(--pink);}
+.ch-body h4{font-size:16px;font-weight:700;font-family:sans-serif;color:var(--dark);margin:20px 0 8px;}
+.ch-body p{font-size:15px;line-height:1.88;color:#2a2a3a;margin-bottom:12px;font-family:sans-serif;}
+.ch-body strong{color:var(--dark);}
+
+/* SUMMARY */
+.sum-wrap{background:var(--soft);color:var(--dark);padding:48px 56px;min-height:100%;}
+.sum-wrap h2{font-size:30px;font-family:sans-serif;font-weight:900;margin-bottom:8px;}
+.divider{width:56px;height:4px;background:linear-gradient(90deg,var(--blue),var(--pink));border-radius:2px;margin-bottom:28px;}
+.ch-list{display:flex;flex-direction:column;gap:10px;max-width:820px;margin:0 auto;}
+.ch-item{display:flex;align-items:center;gap:14px;padding:14px 20px;background:#fff;border-radius:13px;border:2px solid transparent;cursor:pointer;transition:all .25s;box-shadow:0 2px 10px rgba(0,0,0,.06);}
+.ch-item:hover{border-color:var(--pink);transform:translateX(5px);}
+.ch-n{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--pink));display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:900;color:#fff;font-family:sans-serif;flex-shrink:0;}
+.ch-info h3{font-size:15px;font-weight:700;font-family:sans-serif;color:var(--dark);margin:0;}
+.ch-info p{font-size:12px;color:#999;margin-top:2px;font-family:sans-serif;}
+.ch-arrow{margin-left:auto;font-size:16px;color:var(--pink);}
+
+/* BOXES */
+.ibox{background:linear-gradient(135deg,rgba(85,205,252,.1),rgba(247,168,184,.1));border:2px solid rgba(247,168,184,.28);border-radius:13px;padding:18px 22px;margin:18px 0;}
+.ibox .icon{font-size:24px;margin-bottom:7px;}
+.ibox h4{font-size:15px;font-weight:700;font-family:sans-serif;color:var(--dark);margin-bottom:6px;}
+.ibox p{font-size:13px;color:#555;font-family:sans-serif;line-height:1.65;margin:0;}
+.ibox.warn{background:rgba(244,200,66,.08);border-color:rgba(244,200,66,.4);}
+.ibox.secret{background:linear-gradient(135deg,rgba(139,92,246,.1),rgba(247,168,184,.1));border-color:rgba(139,92,246,.35);}
+.ibox.doctor{background:linear-gradient(135deg,rgba(85,205,252,.12),rgba(85,205,252,.05));border-color:rgba(85,205,252,.4);}
+.ibox.kamol{background:linear-gradient(135deg,rgba(247,168,184,.15),rgba(139,92,246,.1));border-color:rgba(247,168,184,.5);}
+.quote{border-left:4px solid var(--blue);padding:15px 22px;margin:20px 0;background:rgba(85,205,252,.06);border-radius:0 12px 12px 0;font-size:16px;font-style:italic;color:#333;line-height:1.65;}
+table.tbl{width:100%;border-collapse:collapse;margin:18px 0;font-family:sans-serif;font-size:13px;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);}
+table.tbl th{background:linear-gradient(135deg,var(--blue),var(--pink));color:#fff;padding:10px 14px;text-align:left;font-weight:700;}
+table.tbl td{padding:9px 14px;border-bottom:1px solid #eee;color:#333;vertical-align:top;}
+table.tbl tr:nth-child(even) td{background:rgba(247,168,184,.05);}
+table.tbl tr:hover td{background:rgba(85,205,252,.07);}
+ul.check{list-style:none;margin:10px 0;}
+ul.check li{padding:7px 0;border-bottom:1px solid #eee;display:flex;align-items:flex-start;gap:9px;font-family:sans-serif;font-size:14px;color:#333;line-height:1.5;}
+ul.check li::before{content:'✅';flex-shrink:0;}
+ul.check.warn li::before{content:'⚠️';}
+ul.check.tip li::before{content:'💡';}
+ul.check.heart li::before{content:'💙';}
+ul.check.star li::before{content:'⭐';}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:11px;margin:16px 0;}
+.card{background:#fff;border-radius:13px;padding:18px;border:2px solid transparent;box-shadow:0 4px 14px rgba(0,0,0,.07);transition:all .25s;text-align:center;}
+.card:hover{border-color:var(--pink);transform:translateY(-3px);}
+.card .icon{font-size:32px;margin-bottom:8px;}
+.card h4{font-size:13px;font-weight:700;font-family:sans-serif;color:var(--dark);}
+.card p{font-size:11px;color:#888;font-family:sans-serif;margin-top:4px;line-height:1.4;}
+
+/* BIANCA FLOAT */
+.bianca-float{float:right;margin:0 0 18px 24px;width:200px;animation:float 3s ease-in-out infinite;}
+.bianca-float img{width:100%;border-radius:16px;filter:drop-shadow(0 8px 20px rgba(247,168,184,.35));}
+.bianca-float .bubble{background:#fff;border:2px solid var(--pink);border-radius:14px 14px 14px 4px;padding:9px 13px;font-size:12px;font-family:sans-serif;color:var(--dark);margin-top:7px;box-shadow:0 4px 12px rgba(247,168,184,.25);line-height:1.45;}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.clearfix::after{content:'';display:table;clear:both;}
+
+/* TIMELINE STEPS */
+.timeline{display:flex;flex-direction:column;gap:0;margin:18px 0;}
+.tl-item{display:flex;gap:16px;padding:14px 0;}
+.tl-dot{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--pink));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;font-family:sans-serif;flex-shrink:0;position:relative;}
+.tl-dot::after{content:'';position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);width:2px;height:14px;background:rgba(247,168,184,.3);}
+.tl-item:last-child .tl-dot::after{display:none;}
+.tl-content h4{font-size:15px;font-weight:700;font-family:sans-serif;color:var(--dark);margin-bottom:4px;}
+.tl-content p{font-size:13px;color:#555;font-family:sans-serif;line-height:1.55;}
+
+/* FOTOS */
+.foto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0;}
+.foto-item{border-radius:13px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.12);position:relative;}
+.foto-item img{width:100%;height:220px;object-fit:cover;display:block;transition:transform .3s;}
+.foto-item:hover img{transform:scale(1.04);}
+.foto-caption{position:absolute;bottom:0;left:0;right:0;padding:8px 12px;background:linear-gradient(transparent,rgba(0,0,0,.75));color:#fff;font-size:12px;font-family:sans-serif;font-weight:700;}
+.foto-destaque{border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.14);margin:18px 0;max-width:520px;}
+.foto-destaque img{width:100%;display:block;object-fit:cover;}
+.foto-destaque .cap{padding:10px 16px;background:#fff;font-size:12px;font-family:sans-serif;color:#666;font-style:italic;}
+
+/* BEFORE/AFTER */
+.ba-wrap{border-radius:16px;overflow:hidden;box-shadow:0 8px 36px rgba(0,0,0,.15);position:relative;user-select:none;margin:20px 0;max-width:560px;}
+.ba-inner{position:relative;width:100%;height:360px;cursor:col-resize;}
+.ba-before,.ba-after{position:absolute;inset:0;}
+.ba-before{background-size:200% 100%;background-position:0% center;background-repeat:no-repeat;}
+.ba-after{background-size:200% 100%;background-position:100% center;background-repeat:no-repeat;clip-path:inset(0 50% 0 0);}
+.ba-lbl{position:absolute;bottom:12px;padding:4px 12px;background:rgba(0,0,0,.6);color:#fff;border-radius:20px;font-size:11px;font-family:sans-serif;font-weight:700;pointer-events:none;z-index:5;}
+.ba-lbl.l{left:12px;}.ba-lbl.r{right:12px;}
+.ba-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);display:flex;align-items:center;justify-content:center;z-index:5;pointer-events:none;}
+.ba-circle{width:40px;height:40px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;font-size:15px;}
+.ba-hint{text-align:center;font-size:11px;color:#aaa;margin-top:6px;font-family:sans-serif;}
+
+/* GLOSSARY */
+.gloss-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px;margin:16px 0;}
+.gloss-item{background:#fff;border-radius:10px;padding:14px 18px;border-left:3px solid var(--pink);box-shadow:0 2px 8px rgba(0,0,0,.06);}
+.gloss-item strong{font-size:14px;font-family:sans-serif;color:var(--dark);display:block;margin-bottom:4px;}
+.gloss-item span{font-size:12px;color:#666;font-family:sans-serif;line-height:1.5;}
+
+/* ERRORS LIST */
+.error-list{display:flex;flex-direction:column;gap:12px;margin:16px 0;}
+.error-item{background:#fff;border-radius:13px;padding:16px 20px;border:2px solid transparent;box-shadow:0 2px 10px rgba(0,0,0,.07);display:flex;gap:14px;align-items:flex-start;}
+.error-item:hover{border-color:var(--pink);}
+.error-num{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--pink));display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:900;color:#fff;font-family:sans-serif;flex-shrink:0;}
+.error-content h4{font-size:14px;font-weight:700;font-family:sans-serif;color:var(--dark);margin-bottom:4px;}
+.error-content p{font-size:12px;color:#666;font-family:sans-serif;line-height:1.5;margin:0;}
+
+/* AUTHOR */
+.author-page{background:linear-gradient(145deg,#0d2238,#1E0A3C,#2d0d1a);min-height:100%;color:#fff;padding:52px 56px;}
+.author-inner{max-width:920px;margin:0 auto;display:flex;gap:52px;align-items:flex-start;}
+.author-img-wrap{flex-shrink:0;position:relative;}
+.author-img-wrap img{width:250px;height:340px;object-fit:cover;border-radius:20px;box-shadow:0 20px 60px rgba(0,0,0,.6);}
+.author-img-wrap::after{content:'';position:absolute;inset:-4px;border-radius:24px;background:linear-gradient(135deg,var(--blue),var(--pink));z-index:-1;opacity:.5;}
+.author-txt h2{font-size:32px;font-weight:900;font-family:sans-serif;margin-bottom:4px;}
+.author-txt h2 span{background:linear-gradient(135deg,var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.author-tagline{font-size:12px;color:var(--gold);font-family:sans-serif;letter-spacing:2px;margin-bottom:20px;text-transform:uppercase;}
+.author-txt p{font-size:14px;line-height:1.88;color:rgba(255,255,255,.82);margin-bottom:12px;font-family:sans-serif;}
+.author-facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+.fact{padding:7px 14px;border-radius:30px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-size:11px;font-family:sans-serif;color:#fff;}
+
+/* BOTTOM NAV */
+#bottom-nav{position:fixed;bottom:0;left:0;right:0;height:56px;background:rgba(13,13,26,.97);backdrop-filter:blur(12px);border-top:1px solid rgba(247,168,184,.18);display:flex;align-items:center;justify-content:center;gap:10px;z-index:1000;}
+#bottom-nav button{padding:8px 22px;border-radius:30px;border:none;font-size:13px;font-weight:700;cursor:pointer;font-family:sans-serif;transition:all .2s;}
+#btn-prev{background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.18);}
+#btn-prev:hover{background:rgba(255,255,255,.18);}
+#btn-next{background:linear-gradient(135deg,var(--blue),var(--pink));color:#1E0A3C;}
+#btn-next:hover{transform:translateY(-2px);}
+::-webkit-scrollbar{width:5px;}
+::-webkit-scrollbar-thumb{background:rgba(247,168,184,.35);border-radius:3px;}
+@media(max-width:768px){
+  .cover-inner,.author-inner{flex-direction:column;padding:24px 16px;gap:24px;}
+  .cover-img img{width:200px;height:280px;}
+  .author-img-wrap img{width:180px;height:240px;}
+  .ch-hero,.ch-body,.sum-wrap,.author-page{padding:24px 16px;}
+  .bianca-float{width:140px;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="logo">🏳️‍⚧️ Bianca Nunes</div>
+  <div class="nav-btns">
+    <button onclick="goTo(0)" id="nav-0">Capa</button>
+    <button onclick="goTo(1)" id="nav-1">Índice</button>
+    <button onclick="goTo(2)" id="nav-2">🧠 Mente</button>
+    <button onclick="goTo(3)" id="nav-3">💊 Hormônios</button>
+    <button onclick="goTo(4)" id="nav-4">🌸 Corpo</button>
+    <button onclick="goTo(5)" id="nav-5">✂️ Cirurgias</button>
+    <button onclick="goTo(6)" id="nav-6">🌏 Kamol</button>
+    <button onclick="goTo(7)" id="nav-7">📋 Documentos</button>
+    <button onclick="goTo(8)" id="nav-8">🎵 Voz</button>
+    <button onclick="goTo(9)" id="nav-9">💜 Vida</button>
+    <button onclick="goTo(10)" id="nav-10">📚 Especiais</button>
+    <button onclick="goTo(11)" id="nav-11">📸 Antes/Depois</button>
+    <button onclick="goTo(12)" id="nav-12">👤 Autora</button>
+  </div>
+  <div id="pg-ind">1/13</div>
+</nav>
+
+<div id="prog" style="width:7.7%"></div>
+<div id="book">
+
+<!-- CAPA -->
+<div class="page active" id="page-0">
+<div class="cover-wrap">
+  <div class="stripe top"><div style="background:#55CDFC"></div><div style="background:#F7A8B8"></div><div style="background:#fff"></div><div style="background:#F7A8B8"></div><div style="background:#55CDFC"></div></div>
+  <div class="cover-glow"></div>
+  <div class="cover-inner">
+    <div class="cover-txt">
+      <div class="cover-label">🏳️‍⚧️ Guia Definitivo · Edição 2026</div>
+      <div class="cover-h1"><div class="w1">GUIA COMPLETO</div><div class="w2">PARA MULHERES</div><div class="w3">TRANS</div></div>
+      <p class="cover-sub">Da Mente ao Corpo — Hormônios, Cirurgias, Kamol Hospital,<br>Neuroplasticidade e os Segredos que Ninguém te Conta</p>
+      <p class="cover-author">✍️ Bianca Nunes</p>
+      <div class="cover-badges">
+        <span class="badge">🧠 Neurociência</span><span class="badge">💊 Hormônios</span><span class="badge">✂️ 23 Cirurgias</span><span class="badge">🌏 Kamol Hospital</span><span class="badge">🌍 Experiência Real</span>
+      </div>
+      <button class="cover-cta" onclick="goTo(1)">Começar a Leitura →</button>
+    </div>
+    <div class="cover-img"><img src="assets/img/autora_principal.jpg" alt="Bianca Nunes"/></div>
+  </div>
+
+  <!-- SALES SECTION -->
+  <div style="position:relative;z-index:2;width:100%;max-width:900px;padding:0 40px 50px;">
+
+    <!-- O que está incluído -->
+    <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:20px;padding:30px 36px;margin-bottom:24px;">
+      <div style="font-size:13px;font-weight:700;font-family:sans-serif;color:var(--blue);letter-spacing:3px;text-transform:uppercase;margin-bottom:16px;">✅ O que está incluído</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;">
+        <div style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.85);">💊 Guia completo de hormônios</div>
+        <div style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.85);">✂️ Cirurgias com valores reais</div>
+        <div style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.85);">🌏 Kamol Hospital — processo completo</div>
+        <div style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.85);">📸 Fotos reais da autora</div>
+        <div style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.85);">🧠 Neurociência aplicada</div>
+        <div style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.85);">📋 Documentos passo a passo</div>
+        <div style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.85);">🎵 Feminização vocal</div>
+        <div style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.85);">💜 Vida, amor & finanças</div>
+        <div style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.85);">📚 Glossário + 10 erros + cronograma</div>
+        <div style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.85);">👤 História real da autora</div>
+      </div>
+    </div>
+
+    <!-- Depoimentos -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:28px;">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 20px;">
+        <div style="font-size:18px;color:var(--gold);">★★★★★</div>
+        <p style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.8);margin-top:8px;line-height:1.6;">"Este guia me deu mais informação em uma tarde do que anos procurando na internet. Obrigada Bianca."</p>
+        <div style="font-size:11px;color:var(--blue);font-family:sans-serif;margin-top:8px;font-weight:700;">— Amanda, 24 anos</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 20px;">
+        <div style="font-size:18px;color:var(--gold);">★★★★★</div>
+        <p style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.8);margin-top:8px;line-height:1.6;">"A parte do Kamol Hospital foi exatamente o que eu precisava antes de marcar minha cirurgia. Detalhadíssimo."</p>
+        <div style="font-size:11px;color:var(--blue);font-family:sans-serif;margin-top:8px;font-weight:700;">— Letícia, 29 anos</div>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 20px;">
+        <div style="font-size:18px;color:var(--gold);">★★★★★</div>
+        <p style="font-size:13px;font-family:sans-serif;color:rgba(255,255,255,.8);margin-top:8px;line-height:1.6;">"As fotos reais da Bianca me deram coragem para seguir em frente. Não estava esperando tanta transparência."</p>
+        <div style="font-size:11px;color:var(--blue);font-family:sans-serif;margin-top:8px;font-weight:700;">— Gabriela, 21 anos</div>
+      </div>
+    </div>
+
+    <!-- PREÇO -->
+    <div style="background:linear-gradient(135deg,rgba(85,205,252,.15),rgba(247,168,184,.15));border:2px solid rgba(247,168,184,.4);border-radius:24px;padding:32px 40px;text-align:center;">
+      <div style="font-size:13px;font-weight:700;font-family:sans-serif;color:rgba(255,255,255,.5);letter-spacing:3px;text-transform:uppercase;text-decoration:line-through;margin-bottom:4px;">De R$ 97</div>
+      <div style="font-size:14px;font-weight:700;font-family:sans-serif;color:var(--gold);letter-spacing:3px;text-transform:uppercase;margin-bottom:8px;">Por apenas</div>
+      <div style="font-size:80px;font-weight:900;font-family:sans-serif;line-height:1;background:linear-gradient(135deg,var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;">R$47</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.6);font-family:sans-serif;margin-top:6px;">Acesso imediato • Pagamento único • Sem mensalidade</div>
+      <a href="SEU_LINK_HOTMART_AQUI" target="_blank" style="display:inline-block;margin-top:24px;padding:18px 60px;background:linear-gradient(135deg,var(--blue),var(--pink));border:none;border-radius:50px;font-size:20px;font-weight:900;color:#1E0A3C;cursor:pointer;font-family:sans-serif;text-decoration:none;box-shadow:0 10px 40px rgba(247,168,184,.5);transition:transform .2s;">
+        🛒 Quero o Guia Completo
+      </a>
+      <div style="font-size:12px;color:rgba(255,255,255,.4);font-family:sans-serif;margin-top:14px;">🔒 Pagamento seguro via Hotmart • PIX, cartão ou boleto</div>
+    </div>
+
+  </div>
+
+  <div class="stripe bot"><div style="background:#55CDFC"></div><div style="background:#F7A8B8"></div><div style="background:#fff"></div><div style="background:#F7A8B8"></div><div style="background:#55CDFC"></div></div>
+</div>
+</div>
+
+<!-- ÍNDICE -->
+<div class="page" id="page-1">
+<div class="sum-wrap">
+  <div style="max-width:820px;margin:0 auto;">
+    <h2>Índice Completo</h2>
+    <div class="divider"></div>
+    <div class="ch-list">
+      <div class="ch-item" onclick="goTo(2)"><div class="ch-n">1</div><div class="ch-info"><h3>🧠 A Mente em Transição</h3><p>Neuroplasticidade, disforia, coming out, autoestima</p></div><div class="ch-arrow">→</div></div>
+      <div class="ch-item" onclick="goTo(3)"><div class="ch-n">2</div><div class="ch-info"><h3>💊 Terapia Hormonal</h3><p>Segredos, diário mês a mês, exames, alimentação</p></div><div class="ch-arrow">→</div></div>
+      <div class="ch-item" onclick="goTo(4)"><div class="ch-n">3</div><div class="ch-info"><h3>🌸 Feminização Corporal</h3><p>Lipo, mama, BBL, make, moda, treino — Dr. Felipe Mendonça</p></div><div class="ch-arrow">→</div></div>
+      <div class="ch-item" onclick="goTo(5)"><div class="ch-n">4</div><div class="ch-info"><h3>✂️ Cirurgias Faciais</h3><p>FFS, voz, redesignação — Dr. Rostand, valores reais</p></div><div class="ch-arrow">→</div></div>
+      <div class="ch-item" onclick="goTo(6)"><div class="ch-n">🌏</div><div class="ch-info"><h3>Kamol Hospital — Bangkok</h3><p>Processo completo, 30 dias, dilatação, recuperação real</p></div><div class="ch-arrow">→</div></div>
+      <div class="ch-item" onclick="goTo(7)"><div class="ch-n">5</div><div class="ch-info"><h3>📋 Documentos & Direitos</h3><p>Retificação, trabalho, denúncia, direitos legais</p></div><div class="ch-arrow">→</div></div>
+      <div class="ch-item" onclick="goTo(8)"><div class="ch-n">6</div><div class="ch-info"><h3>🎵 Feminização Vocal</h3><p>Técnicas, cirurgia, recuperação, recursos gratuitos</p></div><div class="ch-arrow">→</div></div>
+      <div class="ch-item" onclick="goTo(9)"><div class="ch-n">7</div><div class="ch-info"><h3>💜 Vida, Amor & Finanças</h3><p>Namoro, sexualidade, maternidade, dinheiro, OnlyFans</p></div><div class="ch-arrow">→</div></div>
+      <div class="ch-item" onclick="goTo(10)"><div class="ch-n">📚</div><div class="ch-info"><h3>Capítulos Especiais</h3><p>10 erros, glossário, cronograma, carta, mensagem final</p></div><div class="ch-arrow">→</div></div>
+      <div class="ch-item" onclick="goTo(11)"><div class="ch-n">📸</div><div class="ch-info"><h3>Antes & Depois</h3><p>Transformação real — arraste o slider</p></div><div class="ch-arrow">→</div></div>
+      <div class="ch-item" onclick="goTo(12)"><div class="ch-n">👤</div><div class="ch-info"><h3>Sobre a Autora</h3><p>A história real de Bianca Nunes</p></div><div class="ch-arrow">→</div></div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- CAP 1: MENTE -->
+<div class="page" id="page-2">
+<div class="ch-page">
+  <div class="ch-hero"><div class="ch-num-big">01</div><h2>A Mente em <span>Transição</span></h2><p>O que acontece no seu cérebro — e como usar a neurociência como ferramenta de cura e transformação.</p></div>
+  <div class="ch-body clearfix">
+    <div class="bianca-float"><img src="assets/img/anime_1.png" alt=""/><div class="bubble">💜 "Seu cérebro sempre soube quem você é."</div></div>
+    <div class="quote">"Você não está se tornando outra pessoa. Você está finalmente se tornando quem sempre foi."<br><small>— Bianca Nunes</small></div>
+    <h3>A Ciência por Trás de Ser Trans</h3>
+    <p>A neurociência já comprovou: <strong>o cérebro de mulheres trans tem estruturas femininas desde o nascimento</strong>. A região BSTc — responsável pela percepção de gênero — é feminina em mulheres trans independente de qualquer hormônio. Isso não é fase. Não é escolha. É biologia.</p>
+    <h3>Neuroplasticidade — Sua Maior Aliada</h3>
+    <p>Neuroplasticidade é a capacidade do cérebro de <strong>criar novas conexões e reescrever padrões</strong> ao longo da vida. Durante a transição ela trabalha para você:</p>
+    <ul class="check">
+      <li>A voz feminina pode ser treinada — o cérebro aprende novos padrões vocais em semanas</li>
+      <li>Postura e gestos mudam com repetição consciente — o cérebro grava novos circuitos motores</li>
+      <li>A autoimagem se reprograma cada vez que você se vê como quem realmente é</li>
+      <li>A disforia diminui progressivamente conforme corpo e identidade se alinham</li>
+    </ul>
+    <div class="ibox secret"><div class="icon">🔮</div><h4>O Segredo que Ninguém Conta</h4><p>O trauma de anos fingindo ser quem você não é fica gravado no corpo: tensão no maxilar, postura fechada, voz controlada. Quando você começa a transição, o corpo <strong>literalmente relaxa pela primeira vez</strong>. Dor crônica some. Ansiedade cai. Sono melhora. Não é coincidência — é neurociência.</p></div>
+    <h3>Disforia vs. Euforia de Gênero</h3>
+    <p><strong>Disforia</strong> é o sofrimento do desalinhamento — desgosto ao espelho, angústia com o nome, ansiedade em espaços públicos, depressão sem causa aparente.</p>
+    <p><strong>Euforia de gênero</strong> é a alegria profunda de ser vista como quem você é. Explode quando alguém usa o pronome certo, quando uma roupa encaixa, quando sua voz soa como sempre deveria.</p>
+    <h3>Síndrome do Impostor Trans</h3>
+    <p>"Será que sou trans de verdade?" É a dúvida que persegue quase todas. A resposta: <strong>mulheres cis não ficam questionando se são mulheres</strong>. O fato de você questionar já é uma resposta. Além disso: não existe "trans suficiente". Existem mulheres trans em todos os estágios, corpos e expressões.</p>
+    <h3>O Luto que Ninguém Avisa</h3>
+    <p>A transição traz um luto profundo — pela infância que você não teve como menina, pelos anos perdidos fingindo, pelos relacionamentos que mudaram. Esse luto é <strong>real, válido e necessário</strong>. Não fuja dele. Processar com apoio é o que permite curar.</p>
+    <h3>Depressão Pós-Cirurgia — O Que Ninguém Conta</h3>
+    <p>Após cirurgias grandes, é comum uma depressão temporária que pega muitas mulheres de surpresa. Você esperava euforia pura — mas sente tristeza, vazio, irritação. Isso acontece por:</p>
+    <ul class="check warn"><li>Anestesia geral afeta neurotransmissores por semanas</li><li>O cérebro precisa de tempo para integrar a nova imagem corporal</li><li>Expectativa vs. realidade da recuperação (inchaço, dor, limitações)</li><li>Afastamento social durante a recuperação</li></ul>
+    <p>Saber que isso é normal — e que passa — já ajuda imensamente.</p>
+    <h3>Como Fazer o Coming Out</h3>
+    <h4>Para a família:</h4>
+    <p>Escolha um momento tranquilo, sem pressa. Não faça por mensagem se puder evitar. Tenha em mente que a primeira reação raramente é a definitiva — famílias frequentemente mudam com o tempo.</p>
+    <p><strong>Script real:</strong> <em>"Preciso te contar algo importante sobre mim. Sempre me senti diferente do que o mundo via em mim. Agora entendo que sou uma mulher trans. Isso não muda quem eu sou para você — sou a mesma pessoa. Só estou sendo honesta pelo primeiro vez."</em></p>
+    <h4>Para amigos:</h4>
+    <p>Amigos verdadeiros ficam. Os que saem precisavam sair. Comece pelos mais próximos e confiáveis — eles vão te apoiar e ajudar com os outros.</p>
+    <h4>No trabalho:</h4>
+    <p>Fale com o RH antes de anunciar para colegas. Explique sobre o nome social. Se a empresa não respeitar, você tem direitos legais.</p>
+    <h3>Como Lidar com Família que Não Aceita</h3>
+    <ul class="check tip"><li>Dê tempo — a maioria das famílias muda com anos de convivência</li><li>Não force conversas quando há tensão alta</li><li>Mostre quem você é sendo feliz — felicidade convence mais que argumentos</li><li>Estabeleça limites: você não precisa aceitar humilhação para manter o relacionamento</li><li>Busque uma família escolhida — amigos, comunidade trans — enquanto a biológica processa</li></ul>
+    <h3>Reconstruir Autoestima do Zero</h3>
+    <ul class="check star"><li>Celebre cada detalhe que muda — unha pintada, cabelo crescendo, voz mais suave</li><li>Tire fotos para documentar sua evolução — você vai precisar delas nos dias difíceis</li><li>Cerque-se de pessoas que te veem como você é</li><li>Reduza exposição a espaços que te invalidam</li><li>Crie uma rotina de cuidado próprio que te faça sentir feminina todo dia</li></ul>
+    <h3>Técnicas de Regulação Emocional</h3>
+    <ul class="check tip"><li><strong>Respiração 4-7-8:</strong> inspira 4s, segura 7s, solta 8s — reduz ansiedade em minutos</li><li><strong>Journaling:</strong> escrever sobre a transição ajuda o cérebro a processar e integrar</li><li><strong>Meditação body scan:</strong> reconecta você ao seu corpo de forma positiva</li><li><strong>Movimento físico:</strong> exercício libera dopamina e alivia disforia temporariamente</li></ul>
+    <h3>Como Encontrar Psicóloga Trans-Afirmativa</h3>
+    <ul class="check tip"><li>CFP: cfp.org.br — busca por "diversidade de gênero"</li><li>ABGLT: abglt.org.br — lista de profissionais aliados</li><li>Instagram: #psicologiatransafirmativa</li><li>CAPS da sua cidade — atendimento gratuito</li><li>Grupos trans no Telegram têm listas atualizadas de indicações</li></ul>
+    <div class="ibox warn"><div class="icon">⚠️</div><h4>Atenção</h4><p>Nunca aceite profissional que tente "curar" sua identidade ou use terapia de conversão. Isso é antiético, ilegal no Brasil e causa danos comprovados.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- CAP 2: HORMÔNIOS -->
+<div class="page" id="page-3">
+<div class="ch-page">
+  <div class="ch-hero"><div class="ch-num-big">02</div><h2>Terapia <span>Hormonal</span></h2><p>Tudo que você precisa saber — incluindo os segredos que os médicos raramente contam.</p></div>
+  <div class="ch-body clearfix">
+    <div class="bianca-float"><img src="assets/img/anime_3.png" alt=""/><div class="bubble">💊 "Com a TH certa, o corpo finalmente vira seu lar."</div></div>
+    <h3>Como Funciona a Terapia Hormonal Feminizante</h3>
+    <p>A THF usa <strong>estrogênio</strong> e <strong>antiandrogênios</strong> para alinhar o corpo com a identidade feminina. É um dos passos mais transformadores da transição — e um dos mais mal compreendidos.</p>
+    <div class="cards">
+      <div class="card"><div class="icon">💊</div><h4>Estrogênio</h4><p>Feminiza pele, corpo e emoções</p></div>
+      <div class="card"><div class="icon">🚫</div><h4>Antiandrogênio</h4><p>Bloqueia a testosterona</p></div>
+      <div class="card"><div class="icon">💉</div><h4>Injetável</h4><p>Efeito mais constante</p></div>
+      <div class="card"><div class="icon">🩹</div><h4>Adesivo/Gel</h4><p>Absorção diária pela pele</p></div>
+      <div class="card"><div class="icon">🌱</div><h4>Sublingual</h4><p>Debaixo da língua</p></div>
+      <div class="card"><div class="icon">💊</div><h4>Oral</h4><p>Mais acessível</p></div>
+    </div>
+    <div class="ibox secret"><div class="icon">🔮</div><h4>Os Segredos que Ninguém Conta</h4><p><strong>1. A via importa MUITO.</strong> Estrogênio oral perde eficiência no fígado. Injetável ou sublingual absorvem 3–5x melhor.<br><br><strong>2. Sutiã com enchimento acelera o crescimento.</strong> O estímulo mecânico nas glândulas mamárias potencializa o crescimento — use desde o início.<br><br><strong>3. Congele esperma antes.</strong> A TH causa infertilidade gradual — se quiser filhos biológicos, faça isso antes.<br><br><strong>4. O rosto muda sem cirurgia.</strong> Com 2–3 anos de TH, maçãs do rosto, mandíbula e testa se feminilizam naturalmente pela redistribuição de gordura.<br><br><strong>5. Exames são obrigatórios.</strong> Estradiol ideal: 100–200 pg/mL. Testosterona: abaixo de 50 ng/dL. Sem medir, você não sabe se está funcionando.</p></div>
+    <h3>Diário Real — Mês a Mês</h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot">1</div><div class="tl-content"><h4>Mês 1 — A Virada Emocional</h4><p>Alívio emocional profundo. Leveza. Primeiros choros de euforia. Sensação de "finalmente". Possível diminuição da libido. Pele começa a mudar sutilmente.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">2</div><div class="tl-content"><h4>Mês 2–3 — Primeiros Sinais Físicos</h4><p>Pele começa a ficar mais macia. Primeiros brotos mamários (podem doer — é normal). Pelos corporais começam a crescer mais devagar. Emoções mais intensas.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">3</div><div class="tl-content"><h4>Mês 4–6 — Mudanças Visíveis</h4><p>Redistribuição de gordura começa no quadril. Seios crescendo visivelmente. Pele claramente mais feminina. Massa muscular começa a reduzir.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">4</div><div class="tl-content"><h4>Mês 7–12 — Transformação Clara</h4><p>Rosto começa a feminilizar naturalmente. Quadril e glúteos maiores. Pelos corporais muito mais finos. Você começa a ser lida como mulher em público.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">5</div><div class="tl-content"><h4>Ano 2–3 — Resultado Consolidado</h4><p>Corpo feminino estabelecido. Seios no tamanho final (ou próximo). Gordura facial redistribuída. Maioria das pessoas não percebe que você é trans.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">6</div><div class="tl-content"><h4>Ano 5+ — Você é Você</h4><p>Resultado definitivo. Qualidade de vida comparável à população geral em estudos científicos. Você chegou onde sempre quis.</p></div></div>
+    </div>
+    <h3>Como Interpretar Seus Exames</h3>
+    <table class="tbl">
+      <tr><th>Exame</th><th>Nível Ideal</th><th>O que significa</th></tr>
+      <tr><td>Estradiol (E2)</td><td>100–200 pg/mL</td><td>Feminização ativa</td></tr>
+      <tr><td>Testosterona total</td><td>Abaixo de 50 ng/dL</td><td>Supressão eficaz</td></tr>
+      <tr><td>Prolactina</td><td>Normal para mulheres</td><td>Monitorar — pode subir com estrogênio</td></tr>
+      <tr><td>Potássio</td><td>Normal</td><td>Importante com espironolactona</td></tr>
+      <tr><td>Fígado (TGO/TGP)</td><td>Normal</td><td>Monitorar especialmente com oral</td></tr>
+    </table>
+    <h3>Alimentação que Potencializa</h3>
+    <ul class="check tip"><li><strong>Gorduras boas</strong> (abacate, azeite, castanhas) — o estrogênio é feito a partir de colesterol</li><li><strong>Proteína adequada</strong> — mantém massa muscular enquanto o corpo muda</li><li><strong>Fitoestrogênios</strong> (linhaça, soja, grão-de-bico) — suporte natural aos hormônios</li><li><strong>Zinco e magnésio</strong> — apoiam o bloqueio da testosterona</li><li><strong>Vitamina D</strong> — essencial para saúde hormonal geral</li></ul>
+    <h3>Suplementos que Aceleram</h3>
+    <ul class="check star"><li><strong>Colágeno hidrolisado</strong> (10g/dia) — pele, cabelo, unhas</li><li><strong>Biotina</strong> (5.000mcg/dia) — crescimento capilar visível em 3 meses</li><li><strong>Ômega-3</strong> — reduz inflamação, melhora pele</li><li><strong>Saw Palmetto</strong> — antiandrogênio natural suave</li><li><strong>Probióticos</strong> — microbiota intestinal afeta metabolismo hormonal</li></ul>
+    <h3>Antiandrogênios — Qual Escolher?</h3>
+    <table class="tbl">
+      <tr><th>Medicamento</th><th>Custo/mês</th><th>Vantagem</th><th>Desvantagem</th></tr>
+      <tr><td>Espironolactona</td><td>R$ 20–40</td><td>Barato, acessível</td><td>Urina muito, potássio alto</td></tr>
+      <tr><td>Bicalutamida</td><td>R$ 40–80</td><td>Menos efeitos colaterais</td><td>Pode aumentar E2 naturalmente</td></tr>
+      <tr><td>Acetato de Ciproterona</td><td>R$ 60–120</td><td>Muito eficaz</td><td>Pode causar depressão em alguns</td></tr>
+      <tr><td>Análogo de GnRH</td><td>R$ 500–2.000</td><td>Supressão total</td><td>Caro, precisa receita especial</td></tr>
+    </table>
+    <h3>Onde Fazer no Brasil</h3>
+    <ul class="check tip"><li><strong>SUS:</strong> ambulatório trans ou CAPS — gratuito, busque na sua cidade</li><li><strong>Endocrinologista particular:</strong> R$ 200–500/consulta</li><li><strong>Clínicas trans especializadas:</strong> SP, RJ, BH, POA, Recife, Natal, Maceió</li></ul>
+    <div class="ibox warn"><div class="icon">⚠️</div><h4>Automedicação — Os Riscos Reais</h4><p>Se não tiver acesso a médico, ao menos faça exames de sangue regulares. Doses erradas causam coágulos, problemas hepáticos e bloqueio do crescimento dos seios. Nunca aumente dose sem medir seus níveis.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- CAP 3: CORPO -->
+<div class="page" id="page-4">
+<div class="ch-page">
+  <div class="ch-hero"><div class="ch-num-big">03</div><h2>Feminização <span>Corporal</span></h2><p>Cirurgias, beleza, moda e treino — tudo para o corpo que você sempre imaginou.</p></div>
+  <div class="ch-body clearfix">
+    <div class="bianca-float"><img src="assets/img/anime_5.png" alt=""/><div class="bubble">🌸 "Cada curva é uma conquista sua."</div></div>
+    <div class="ibox doctor"><div class="icon">👨‍⚕️</div><h4>Médico Indicado — Lipo, Mama & Bumbum</h4><p><strong>Dr. Felipe Mendonça — Maceió, Alagoas</strong><br>Especialista em cirurgia plástica feminizante. Realizou lipoaspiração, implante mamário e BBL da autora. Indico com confiança total por experiência própria e resultado comprovado.</p></div>
+    <h3>Lipoaspiração Feminizante</h3>
+    <p>A lipo feminizante retira gordura de áreas masculinas (abdômen, flancos, costas) e redistribui para quadril e glúteos, criando a curva em S do corpo feminino.</p>
+    <table class="tbl">
+      <tr><th>Procedimento</th><th>O que faz</th><th>Custo Brasil</th></tr>
+      <tr><td>Lipo abdominal</td><td>Define cintura, remove flancos</td><td>R$ 8–18k</td></tr>
+      <tr><td>BBL (gordura no bumbum)</td><td>Projeta e arredonda glúteos</td><td>R$ 10–22k</td></tr>
+      <tr><td>Lipo + BBL completo</td><td>Cintura + glúteo + quadril</td><td>R$ 18–35k</td></tr>
+    </table>
+    <h3>Recuperação Corporal — Detalhada</h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot">D1</div><div class="tl-content"><h4>Dia da Cirurgia</h4><p>Anestesia geral. Acordar com drenos, cinta compressora e dor moderada. Ficar em observação 12–24h.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">48h</div><div class="tl-content"><h4>48 Horas Pós</h4><p>Drenagem linfática é obrigatória e urgente. Reduz inchaço e acelera o resultado. Programe ao menos 10 sessões.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">S1</div><div class="tl-content"><h4>Semana 1</h4><p>Cinta compressora 24h, não pode molhar os pontos, dieta leve, repouso absoluto. Inchaço máximo — não se assuste.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">30d</div><div class="tl-content"><h4>30 Dias</h4><p>Cinta ainda 20h por dia. Inchaço começa a sumir. Resultado parcial já aparece. Pode retomar vida normal leve.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">60d</div><div class="tl-content"><h4>60 Dias</h4><p>Resultado das curvas visível. Cinta só à noite. Pode fazer caminhadas e atividade leve.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">6m</div><div class="tl-content"><h4>6 Meses</h4><p>Resultado final consolidado. Inchaço zero. Corpo no formato definitivo. Vale a pena!</p></div></div>
+    </div>
+    <div class="ibox secret"><div class="icon">🔮</div><h4>O que Ninguém Conta sobre a Recuperação</h4><p>A drenagem linfática dói mas é <strong>obrigatória</strong> — sem ela o resultado pode ser irregular. Faça no mínimo 10 sessões nas 2 primeiras semanas. Além disso: o bumbum some um pouco com a absorção da gordura — já existe por isso um percentual calculado de perda. O resultado que você vê no dia é maior que o resultado final.</p></div>
+    <div class="foto-destaque"><img src="assets/img/corpo_atual.jpg" alt="Resultado real" style="max-height:380px;"/><div class="cap">💜 Resultado real — corpo feminino após TH + lipo + BBL com Dr. Felipe Mendonça</div></div>
+    <h3>Implante Mamário</h3>
+    <p>Recomendado após 2+ anos de TH. A TH já feminiliza — a cirurgia complementa o que a natureza não completou.</p>
+    <ul class="check tip"><li>Espere ao menos 2 anos de TH antes de operar</li><li>Próteses: R$ 8.000–20.000</li><li>Tamanho ideal depende da sua estrutura e desejo</li><li>Recuperação: 2–4 semanas sem esforço físico</li></ul>
+    <h3>Skincare Completo</h3>
+    <ul class="check star"><li><strong>Limpeza</strong> 2x/dia com gel ou espuma suave</li><li><strong>Vitamina C</strong> — ilumina e uniformiza o tom</li><li><strong>Retinol</strong> (noite) — acelera renovação celular</li><li><strong>Ácido hialurônico</strong> — hidratação profunda</li><li><strong>Protetor solar FPS 50+</strong> — obrigatório todo dia sem exceção</li></ul>
+    <h3>Maquiagem para Feminização Facial</h3>
+    <ul class="check tip"><li><strong>Base com cobertura</strong> — equalize o tom, cubra barba em recuperação</li><li><strong>Contorno</strong>: escureça mandíbula e testa larga, ilumine maçãs do rosto</li><li><strong>Sobrancelhas finas e arqueadas</strong> — feminilizam o olhar completamente</li><li><strong>Delineador cat eye</strong> — elonga os olhos horizontalmente</li><li><strong>Batom nude ou rosa</strong> — visualmente aumenta os lábios</li><li><strong>Blush nas maçãs</strong> — adiciona volume feminino ao rosto</li></ul>
+    <h3>Moda — Como Vestir Seu Corpo Atual</h3>
+    <ul class="check star"><li>Vestidos evasê — disfarçam quadril mais estreito</li><li>Cintura marcada — cria ilusão de curva</li><li>Decote V — alonga o pescoço e suaviza ombros</li><li>Saias midi — feminilizam sem expor muito</li><li>Modeladores sob roupas — criam silhueta enquanto o corpo muda</li></ul>
+    <h3>Treino para Corpo Feminino</h3>
+    <ul class="check tip"><li><strong>Agachamento livre</strong> — glúteo e quadríceps, forma as coxas</li><li><strong>Elevação pélvica (hip thrust)</strong> — ativa glúteo máximo diretamente</li><li><strong>Abdutores</strong> — abre o quadril lateralmente</li><li><strong>Panturrilha</strong> — define as pernas</li><li>Evite treinos pesados de ombro e costas — mantêm aparência masculina</li></ul>
+    <h3>Linguagem Corporal Feminina</h3>
+    <ul class="check star"><li>Pés mais alinhados ao andar — menos abertura lateral</li><li>Gesticular com os pulsos — mais suavidade nas mãos</li><li>Inclinar a cabeça ao ouvir — marca de escuta ativa feminina</li><li>Cruzar as pernas ao sentar</li><li>Postura erguida — ombros levemente atrás, queixo paralelo ao chão</li></ul>
+    <h3>Epilação a Laser</h3>
+    <p>8–12 sessões para redução permanente. Funciona melhor com pelos escuros. <strong>Custo:</strong> R$ 100–400/sessão por área. Faça o rosto primeiro — maior impacto no passing diário.</p>
+  </div>
+</div>
+</div>
+
+<!-- CAP 4: CIRURGIAS FACIAIS -->
+<div class="page" id="page-5">
+<div class="ch-page">
+  <div class="ch-hero"><div class="ch-num-big">04</div><h2>Cirurgias <span>Faciais & Voz</span></h2><p>FFS completa, voz e redesignação — o processo real com fotos e médicos indicados.</p></div>
+  <div class="ch-body clearfix">
+    <div class="bianca-float"><img src="assets/img/anime_7.png" alt=""/><div class="bubble">✨ "O rosto é a primeira coisa que o mundo vê."</div></div>
+    <div class="ibox doctor"><div class="icon">👨‍⚕️</div><h4>Médico Indicado — FFS & Voz</h4><p><strong>Dr. Rostand — Natal, Rio Grande do Norte</strong><br>Realizou a feminização facial e cirurgia de voz da autora. Referência no Nordeste para cirurgias de feminização trans. Indico com confiança total por resultado comprovado.</p></div>
+    <h3>O que é a FFS</h3>
+    <p>FFS (Facial Feminization Surgery) é o conjunto de cirurgias que feminiliza as estruturas ósseas e de tecido mole do rosto. É frequentemente o procedimento de maior impacto para o passing.</p>
+    <table class="tbl">
+      <tr><th>Procedimento</th><th>O que faz</th><th>Custo Brasil</th></tr>
+      <tr><td>Redução de testa</td><td>Recua o osso frontal proeminente</td><td>R$ 15–30k</td></tr>
+      <tr><td>Rinoplastia</td><td>Afina, eleva e refina o nariz</td><td>R$ 8–20k</td></tr>
+      <tr><td>Mandibuloplastia</td><td>Afina mandíbula e queixo</td><td>R$ 10–25k</td></tr>
+      <tr><td>Lipofilling facial</td><td>Volume nas maçãs do rosto</td><td>R$ 5–12k</td></tr>
+      <tr><td>Lifting facial</td><td>Suaviza e levanta</td><td>R$ 12–28k</td></tr>
+      <tr><td>FFS completa</td><td>Pacote completo personalizado</td><td>R$ 40–100k</td></tr>
+    </table>
+    <h3>📸 O Processo Real — Fotos da Bianca</h3>
+    <div class="foto-grid">
+      <div class="foto-item"><img src="assets/img/ffs_hospital1.jpg" alt=""/><div class="foto-caption">🏥 Pós-operatório — Dia 1</div></div>
+      <div class="foto-item"><img src="assets/img/ffs_hospital2.jpg" alt=""/><div class="foto-caption">🏥 Pós-operatório — Dia 2</div></div>
+      <div class="foto-item"><img src="assets/img/ffs_recuperacao.jpg" alt=""/><div class="foto-caption">🩹 Recuperação — Em Casa</div></div>
+    </div>
+    <div class="quote">"Olhando essas fotos hoje, só sinto orgulho. Cada hematoma, cada sutura, cada dia difícil valeu. Porque o que veio depois fui eu mesma."<br><small>— Bianca Nunes</small></div>
+    <h3>Recuperação da FFS — Detalhada</h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot">D1</div><div class="tl-content"><h4>Dia 1–3</h4><p>Inchaço máximo. Olhos podem estar fechados. Drenagem normal. Dor moderada controlada com medicação. Dieta líquida.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">S1</div><div class="tl-content"><h4>Semana 1–2</h4><p>Curativos diários. Antibióticos. Dieta pastosa. Não pode molhar o rosto diretamente. Hematomas aparentes.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">S3</div><div class="tl-content"><h4>Semana 3–4</h4><p>Hematomas começam a sumir. Inchaço diminui. Você começa a ver o resultado aparecer. Emocionalmente intenso.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">2m</div><div class="tl-content"><h4>Mês 1–2</h4><p>Inchaço muito menor. Resultado parcial visível. A maioria das pessoas já nota a diferença.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">6m</div><div class="tl-content"><h4>Mês 3–6</h4><p>Resultado quase definitivo. Cicatrizes clarareando. Você começa a se reconhecer completamente.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">1a</div><div class="tl-content"><h4>1 Ano</h4><p>Resultado definitivo. Cicatrizes praticamente invisíveis. Você é você — completamente.</p></div></div>
+    </div>
+    <div class="ibox warn"><div class="icon">⚠️</div><h4>O que Ninguém te Fala Antes</h4><p>• Dor emocional pós-FFS é real — o cérebro precisa integrar a nova face<br>• Resultado definitivo só em 1 ano — não julgue o resultado com 3 meses<br>• Sempre visite pessoalmente o cirurgião antes — veja resultados reais de pacientes<br>• Desconfie de preços muito abaixo do mercado<br>• Compulsão cirúrgica existe — se você já fez muitas cirurgias e ainda não está satisfeita, busque apoio psicológico antes de operar novamente</p></div>
+  </div>
+</div>
+</div>
+
+<!-- KAMOL -->
+<div class="page" id="page-6">
+<div class="ch-page">
+  <div class="ch-hero" style="background:none;"><div style="position:absolute;inset:0;background:linear-gradient(145deg,#0d2238,#2d1b4e);"></div><div class="ch-num-big">🌏</div><h2>Kamol Hospital <span>Bangkok</span></h2><p>O processo completo da mudança de sexo — pré-op, cirurgia, 30 dias na Tailândia, dilatação e vida após.</p></div>
+  <div class="ch-body clearfix">
+    <div class="bianca-float"><img src="assets/img/anime_6.png" alt=""/><div class="bubble">🌸 "Foi lá que me tornei completa."</div></div>
+    <div class="ibox kamol"><div class="icon">🏥</div><h4>Dr. Kamol — Kamol Hospital, Bangkok</h4><p>O Dr. Kamol Pansritum é considerado um dos melhores cirurgiões de redesignação sexual do mundo. O Kamol Hospital é referência global. A autora realizou sua SRS lá — e indica com total confiança.<br><strong>Site:</strong> kamolhospital.com</p></div>
+    <h3>Por que a Tailândia?</h3>
+    <ul class="check star"><li>Qualidade cirúrgica superior à maioria das clínicas ocidentais</li><li>Custo 40–60% menor que Brasil ou Europa</li><li>Equipe especializada 100% em cirurgias trans</li><li>Estrutura completa de suporte pós-operatório</li><li>Passagem + cirurgia + 30 dias muitas vezes sai mais barato que só a cirurgia no Brasil</li></ul>
+    <h3>Técnicas Disponíveis</h3>
+    <table class="tbl">
+      <tr><th>Técnica</th><th>O que é</th><th>Custo aprox.</th><th>Para quem</th></tr>
+      <tr><td><strong>Penile Inversion</strong></td><td>Usa tecido peniano — mais comum</td><td>USD 12–18k</td><td>A maioria das pacientes</td></tr>
+      <tr><td><strong>Colovaginoplastia</strong></td><td>Usa segmento do intestino</td><td>USD 15–22k</td><td>Quem quer mais profundidade e lubrificação</td></tr>
+      <tr><td><strong>Vulvoplastia</strong></td><td>Cria vulva sem canal vaginal</td><td>USD 8–14k</td><td>Quem não quer penetração vaginal</td></tr>
+    </table>
+    <h3>Pré-Operatório — Antes de Viajar</h3>
+    <ul class="check"><li>Consulta online com o Dr. Kamol — enviar fotos e histórico médico</li><li>Laudo psicológico + psiquiátrico (exigido pelo hospital)</li><li>Exigem ao menos 1 ano de TH documentada</li><li>Exames pré-op enviados antecipadamente (sangue, ECG, HIV)</li><li>Depilação obrigatória na área cirúrgica — laser ou cera, ao menos 3 sessões antes</li><li>Parar anticoagulantes 2 semanas antes — consultar médico</li><li>Separar USD 20–30k para tudo (cirurgia + hotel + alimentação + imprevistos)</li></ul>
+    <h3>Chegando em Bangkok</h3>
+    <ul class="check tip"><li>Chegue ao menos 3 dias antes para consulta presencial e exames finais</li><li>Hotel próximo ao hospital — muitas recovery houses em Sukhumvit</li><li>Compre chip local no aeroporto — internet barata e rápida</li><li>Leve conforto: roupas largas, chinelos, travesseiro de pescoço para o voo</li></ul>
+    <h3>Dia da Cirurgia</h3>
+    <p>Você é internada na véspera. Preparo intestinal completo no dia anterior (dieta líquida + laxante). No dia: jejum desde meia-noite, internação às 6h, cirurgia às 8h.</p>
+    <ul class="check"><li>Duração: 4–6 horas de cirurgia</li><li>Anestesia geral — você não sente nada</li><li>A equipe do Dr. Kamol é extremamente profissional e cuidadosa</li></ul>
+    <h3>Recuperação no Hospital (7–10 dias)</h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot">D1</div><div class="tl-content"><h4>Pós-operatório imediato</h4><p>UTI ou quarto de recuperação. Cateter urinário. Sonda nasogástrica se necessário. Drenos. Dor controlada com morfina/IV. Enfermeiras atendem 24h.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">D2</div><div class="tl-content"><h4>Primeiros movimentos</h4><p>Equipe ajuda você a ficar em pé pela primeira vez. Sensação estranha. Inchaço significativo. Cateter ainda presente.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">D3</div><div class="tl-content"><h4>Dieta começa</h4><p>Líquidos, depois pastoso. Cateter pode ser removido. Primeiras dores sem morfina — medicação oral.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">D5</div><div class="tl-content"><h4>Primeira troca de curativo</h4><p>Médico troca o curativo — momento intenso emocionalmente. Você vê o resultado pela primeira vez. Muitas choram de alegria.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">D7</div><div class="tl-content"><h4>Alta hospitalar</h4><p>Você vai para a recovery house com orientações completas. Primeira dilatação supervisionada pela equipe antes de sair.</p></div></div>
+    </div>
+    <h3>Recovery House em Bangkok (2–3 semanas)</h3>
+    <p>A recovery house é essencial — não vá para um hotel comum. As recovery houses especializadas para mulheres trans têm:</p>
+    <ul class="check star"><li>Pessoal treinado para ajudar com dilatação e cuidados</li><li>Ambiente entre outras mulheres trans em recuperação — apoio mútuo imenso</li><li>Refeições adequadas para a recuperação</li><li>Localização próxima ao hospital para retornos</li></ul>
+    <h3>Protocolo de Dilatação — O Processo Mais Importante</h3>
+    <div class="ibox kamol"><div class="icon">⚠️</div><h4>A dilatação é obrigatória e permanente</h4><p>Se você parar de dilatar, a vagina fecha. Isso é irreversível. A dilatação é a parte mais trabalhosa da recuperação — mas faz parte de ser você.</p></div>
+    <table class="tbl">
+      <tr><th>Período</th><th>Frequência</th><th>Duração</th></tr>
+      <tr><td>Mês 1–3</td><td>4x ao dia</td><td>20–30 min cada</td></tr>
+      <tr><td>Mês 3–6</td><td>2x ao dia</td><td>20 min cada</td></tr>
+      <tr><td>Mês 6–12</td><td>1x ao dia</td><td>20 min</td></tr>
+      <tr><td>Após 1 ano</td><td>3–4x por semana</td><td>15 min (manutenção)</td></tr>
+    </table>
+    <ul class="check tip"><li>Use lubrificante à base de água — nunca a seco</li><li>Dilatadores vêm em tamanhos progressivos — siga o protocolo do médico</li><li>Dói menos com o tempo — o tecido vai aceitando</li><li>Relações sexuais contam como dilatação após liberação médica</li></ul>
+    <h3>O Mês Completo na Tailândia — Custos</h3>
+    <table class="tbl">
+      <tr><th>Item</th><th>Custo estimado</th></tr>
+      <tr><td>Cirurgia (penile inversion)</td><td>USD 12–18k</td></tr>
+      <tr><td>Hospital (7–10 dias)</td><td>Incluído ou USD 1–2k extra</td></tr>
+      <tr><td>Recovery house (3 semanas)</td><td>USD 1.500–3.000</td></tr>
+      <tr><td>Passagem aérea (ida e volta)</td><td>R$ 4.000–8.000</td></tr>
+      <tr><td>Alimentação + extras</td><td>USD 500–1.000</td></tr>
+      <tr><td><strong>TOTAL ESTIMADO</strong></td><td><strong>USD 15–22k + passagem</strong></td></tr>
+    </table>
+    <h3>Voltando para Casa</h3>
+    <ul class="check warn"><li>Voo longo com pontos — use almofada de gel, levante a cada 2h</li><li>Leve documentação médica do hospital para a imigração</li><li>Declare os medicamentos pós-operatórios na alfândega</li><li>Nas primeiras semanas em casa continue o protocolo rigorosamente</li><li>Consulte ginecologista trans no Brasil para acompanhamento contínuo</li></ul>
+    <h3>Vida Sexual Após a SRS</h3>
+    <p>A liberação médica para relações sexuais geralmente ocorre após 3 meses. O orgasmo é possível e relatado pela maioria das pacientes — o tecido clitoriano é preservado durante a cirurgia. A sensibilidade pode demorar meses para plena percepção.</p>
+    <div class="quote">"Acordar após a cirurgia e olhar para baixo foi o momento mais importante da minha vida. Não de alívio — de reconhecimento. Finalmente era eu."<br><small>— Bianca Nunes</small></div>
+  </div>
+</div>
+</div>
+
+<!-- CAP 5: DOCUMENTOS -->
+<div class="page" id="page-7">
+<div class="ch-page">
+  <div class="ch-hero"><div class="ch-num-big">05</div><h2>Documentos <span>& Direitos</span></h2><p>Como mudar nome e gênero legalmente — e conhecer os direitos que ninguém te ensinou.</p></div>
+  <div class="ch-body clearfix">
+    <div class="bianca-float"><img src="assets/img/anime_9.png" alt=""/><div class="bubble">📋 "Seu nome é seu. Exija ser chamada por ele."</div></div>
+    <h3>Nome Social — Use Agora, Sem Documento</h3>
+    <p>O nome social é um direito imediato. Sem precisar de nenhum papel.</p>
+    <ul class="check"><li>Escolas e universidades: solicite ao secretário</li><li>Hospitais e UBS: informe na recepção</li><li>Trabalho: solicite ao RH — protegido por lei</li><li>Repartições públicas: obrigatório por resolução federal</li><li>Quem se recusar comete discriminação — denuncie</li></ul>
+    <h3>Retificação no Cartório — Passo a Passo</h3>
+    <p>Desde 2018 (STF, ADI 4275), qualquer pessoa trans pode mudar nome e gênero <strong>diretamente no cartório, gratuitamente, sem cirurgia e sem laudo médico</strong>.</p>
+    <table class="tbl">
+      <tr><th>Passo</th><th>Ação</th><th>Custo</th></tr>
+      <tr><td>1</td><td>Vá ao Cartório de Registro Civil com RG, CPF, certidão de nascimento e comprovante de residência</td><td>Gratuito</td></tr>
+      <tr><td>2</td><td>Solicite retificação de prenome e campo sexo</td><td>—</td></tr>
+      <tr><td>3</td><td>Assine declaração afirmando identidade trans</td><td>—</td></tr>
+      <tr><td>4</td><td>Aguarde 15 dias úteis</td><td>—</td></tr>
+      <tr><td>5</td><td>Retire nova certidão e mude todos os documentos em cascata</td><td>—</td></tr>
+    </table>
+    <div class="ibox secret"><div class="icon">🔮</div><h4>Mude Tudo de Uma Vez</h4><p>Com a nova certidão, mude em sequência: <strong>RG → CPF → título de eleitor → CNH → carteira de trabalho → passaporte → plano de saúde → contas bancárias</strong>. Leva 30–60 dias para tudo normalizar. Se algum cartório dificultar — acione a Defensoria Pública (gratuito).</p></div>
+    <h3>Seus Direitos no Trabalho</h3>
+    <ul class="check heart"><li>Usar banheiro feminino — direito garantido</li><li>Ser chamada pelo nome social — obrigatório</li><li>Usar uniforme feminino — pode exigir</li><li>Demissão por ser trans é discriminação — processo trabalhista</li><li>Assédio transfóbico — registre tudo com data e testemunhas</li></ul>
+    <h3>Trans na Escola e Universidade</h3>
+    <ul class="check tip"><li>Nome social em chamadas, provas e documentos internos</li><li>Banheiro feminino — lei garante</li><li>Bolsas específicas para mulheres trans em algumas universidades</li><li>MEC tem política de inclusão trans no ensino superior</li></ul>
+    <h3>Onde Denunciar Violações</h3>
+    <ul class="check star"><li>Disque 100 — Direitos Humanos (24h, gratuito)</li><li>Defensoria Pública — assistência jurídica gratuita</li><li>ANTRA — antra.org.br</li><li>Delegacia da Mulher — crimes de transfobia</li></ul>
+  </div>
+</div>
+</div>
+
+<!-- CAP 6: VOZ -->
+<div class="page" id="page-8">
+<div class="ch-page">
+  <div class="ch-hero"><div class="ch-num-big">06</div><h2>Feminização <span>Vocal</span></h2><p>Como treinar sua voz para soar naturalmente feminina — técnicas reais, cirurgia e recuperação.</p></div>
+  <div class="ch-body clearfix">
+    <div class="bianca-float"><img src="assets/img/anime_2.png" alt=""/><div class="bubble">🎵 "Sua voz pode aprender a ser sua."</div></div>
+    <h3>Por que a Voz Não Muda com Hormônios</h3>
+    <p>As cordas vocais já cresceram com a testosterona na puberdade — o estrogênio não as reverte. A boa notícia: o cérebro aprende novos padrões vocais com rapidez surpreendente.</p>
+    <div class="ibox secret"><div class="icon">🔮</div><h4>O Segredo da Voz Feminina</h4><p>Voz feminina não é só falar mais agudo — isso soa artificial e cansa. O segredo é a <strong>ressonância</strong>: mulheres cis ressoam no peito e na cabeça de forma diferente, com mais leveza e ar. Foque em ressonância + entonação + ritmo. É isso que convence, não o pitch.</p></div>
+    <h3>Técnicas que Funcionam</h3>
+    <ul class="check tip"><li><strong>Humming "mmm":</strong> lábios fechados, sinta a ressonância subir para a cabeça</li><li><strong>Exercício da palha:</strong> fale através de um canudo — força ressonância de cabeça</li><li><strong>Leitura em voz alta:</strong> 15 min/dia constrói novo padrão neural em semanas</li><li><strong>Grave e ouça:</strong> o cérebro não percebe a própria voz como os outros ouvem</li><li><strong>App Voice Pitch Analyzer:</strong> meta feminina — 165–255 Hz</li><li><strong>Fale mais devagar:</strong> mulheres falam em ritmo mais pausado que homens</li></ul>
+    <div class="ibox doctor"><div class="icon">👨‍⚕️</div><h4>Médico Indicado — Cirurgia Vocal</h4><p><strong>Dr. Rostand — Natal, Rio Grande do Norte</strong><br>Técnica de glotoplastia com excelente resultado. Recomendo ao menos 1 ano de treinamento antes de considerar cirurgia.</p></div>
+    <h3>Cirurgia Vocal</h3>
+    <table class="tbl">
+      <tr><th>Técnica</th><th>O que faz</th><th>Custo Brasil</th></tr>
+      <tr><td>Glotoplastia (Wendler)</td><td>Reduz comprimento das cordas vocais</td><td>R$ 8–20k</td></tr>
+      <tr><td>CTA (cricotireoidea)</td><td>Aumenta tensão das cordas</td><td>R$ 6–15k</td></tr>
+      <tr><td>Laser vocal</td><td>Afina as cordas</td><td>R$ 5–12k</td></tr>
+    </table>
+    <h3>Recuperação Vocal — Detalhada</h3>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-dot">15d</div><div class="tl-content"><h4>Silêncio Absoluto — 15 dias</h4><p>Sem falar, sussurrar ou tossir voluntariamente. Comunique-se por escrito ou gestos. É a fase mais difícil mas mais importante.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">30d</div><div class="tl-content"><h4>Apenas Sussurros — até 30 dias</h4><p>Pode sussurrar suavemente. Sem esforço vocal. Continue evitando ruídos altos.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">45d</div><div class="tl-content"><h4>Voz Começa a Voltar</h4><p>A nova voz aparece — diferente, mais feminina. Pode ser estranha no início. Continue os exercícios suaves.</p></div></div>
+      <div class="tl-item"><div class="tl-dot">3m</div><div class="tl-content"><h4>Nova Voz Estabiliza</h4><p>A voz feminina se consolida. Treinamento vocal contínuo potencializa o resultado da cirurgia.</p></div></div>
+    </div>
+    <div class="ibox warn"><div class="icon">⚠️</div><h4>Proteja a Voz para Sempre</h4><p>Após a cirurgia vocal: evite gritar, cigarro, álcool excessivo e locais com fumaça. Hidrate-se bem — cordas vocais precisam de umidade. Uma única forçada pode comprometer semanas de recuperação.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- CAP 7: VIDA -->
+<div class="page" id="page-9">
+<div class="ch-page">
+  <div class="ch-hero"><div class="ch-num-big">07</div><h2>Vida, Amor <span>& Finanças</span></h2><p>Relacionamentos, sexualidade, maternidade, dinheiro e como construir a vida que você merece.</p></div>
+  <div class="ch-body clearfix">
+    <div class="bianca-float"><img src="assets/img/anime_4.png" alt=""/><div class="bubble">💜 "Você merece amor. Ponto final."</div></div>
+    <h3>Namorar Sendo Trans</h3>
+    <p>Uma das maiores dúvidas. A verdade: <strong>existem muitas pessoas que amam e se atraem por mulheres trans</strong>. O desafio é encontrá-las nos lugares certos — e separar quem realmente te vê de quem te fetichiza.</p>
+    <ul class="check tip"><li>Tinder e Bumble têm opções de identidade trans — use-as</li><li>Grindr tem muitos homens que se atraem por mulheres trans</li><li>Taimi — app especializado em LGBTQ+</li><li>Seja honesta sobre ser trans — por sua segurança e autenticidade</li><li>Você não é obrigada a contar antes de querer — mas considere sua segurança</li></ul>
+    <h3>Fetiches vs. Amor Real</h3>
+    <p>Sinais de quem te fetichiza: <strong>só quer sexo, nunca te apresenta para ninguém, te chama de "ele" por acidente repetidamente, some após a relação</strong>. Sinais de quem te ama: te apresenta, te defende, te vê completa como mulher.</p>
+    <div class="ibox warn"><div class="icon">⚠️</div><h4>Segurança em Primeiro Lugar</h4><p>Sempre marque primeiros encontros em locais públicos. Avise uma amiga onde você vai. Violência transfóbica acontece — confie nos seus instintos. Se algo parece errado, saia.</p></div>
+    <h3>Sexualidade Após a Transição</h3>
+    <p>A sexualidade pode mudar completamente durante a transição. É comum que a orientação sexual se reavalhe — muitas mulheres trans que se identificavam como gays antes passam a se identificar como heterossexuais ou bissexuais após a transição. Isso é completamente normal e não invalida nenhuma identidade anterior.</p>
+    <h3>Vida Sexual Após a SRS</h3>
+    <p>Após a redesignação, o orgasmo é possível e relatado pela maioria. O tecido clitoriano é preservado na cirurgia. A sensibilidade plena pode demorar 6–12 meses para se estabelecer. <strong>O prazer existe — o corpo aprende.</strong></p>
+    <h3>Trans e Maternidade</h3>
+    <ul class="check heart"><li><strong>Adoção:</strong> mulheres trans podem adotar legalmente após retificação — processo idêntico ao de qualquer pessoa</li><li><strong>Barriga solidária:</strong> usar esperma congelado antes da TH com uma doadora de óvulo e barriga de aluguel (em países que permitem)</li><li><strong>Co-parentalidade:</strong> criar um filho com um amigo ou parceiro sem vínculo conjugal</li><li>No Brasil, a adoção é o caminho mais acessível</li></ul>
+    <h3>OnlyFans e Conteúdo Adulto</h3>
+    <p>Muitas mulheres trans encontram no OnlyFans uma fonte de renda que dá autonomia. Antes de começar:</p>
+    <ul class="check tip"><li>Crie identidade separada — e-mail novo, nome artístico</li><li>Nunca mostre rosto se não quiser associação pública</li><li>Preços iniciais baixos para construir base de assinantes</li><li>Conteúdo exclusivo para assinantes VIP = maior receita</li><li>Declare os impostos — Receita Federal monitora transferências</li><li>Tenha clareza sobre seus limites antes de começar</li></ul>
+    <h3>Como Pagar as Cirurgias</h3>
+    <ul class="check star"><li><strong>SUS:</strong> redesignação sexual gratuita — fila longa, mas existe</li><li><strong>Financiamento médico:</strong> clínicas parceiras de financeiras — 36–60x</li><li><strong>Crowdfunding:</strong> Catarse, Vakinha — a comunidade trans apoia muito</li><li><strong>Redes sociais:</strong> documentar a transição gera seguidores e renda</li><li><strong>Priorize por impacto:</strong> hormônios → voz → rosto → corpo → SRS</li></ul>
+    <h3>Os Países Mais Seguros para Mulheres Trans</h3>
+    <table class="tbl">
+      <tr><th>País</th><th>Por que é bom</th></tr>
+      <tr><td>🇵🇹 Portugal</td><td>Idioma, direitos trans avançados, comunidade trans acolhedora</td></tr>
+      <tr><td>🇨🇦 Canadá</td><td>TH coberta pelo governo em muitas províncias, muito inclusivo</td></tr>
+      <tr><td>🇩🇪 Alemanha</td><td>TH gratuita pelo seguro, direitos sólidos</td></tr>
+      <tr><td>🇦🇷 Argentina</td><td>Leis trans mais avançadas do mundo, próxima do Brasil</td></tr>
+      <tr><td>🇹🇭 Tailândia</td><td>Cultura acolhedora, cirurgias de referência mundial</td></tr>
+    </table>
+    <h3>Renda como Criadora de Conteúdo Trans</h3>
+    <ul class="check tip"><li>Documentar a transição gera conexão genuína e audiência leal</li><li>TikTok e Instagram têm nichos trans com altíssimo engajamento</li><li>Guias, e-books e cursos vendem muito — como este!</li><li>Parcerias com clínicas e médicos especializados</li><li>Autenticidade vale mais que perfeição — sua história é seu produto</li></ul>
+  </div>
+</div>
+</div>
+
+<!-- ESPECIAIS -->
+<div class="page" id="page-10">
+<div class="ch-page">
+  <div class="ch-hero"><div class="ch-num-big">📚</div><h2>Capítulos <span>Especiais</span></h2><p>10 erros, cronograma, glossário, carta e a mensagem que vai ficar com você para sempre.</p></div>
+  <div class="ch-body clearfix">
+    <div class="bianca-float"><img src="assets/img/anime_10.png" alt=""/><div class="bubble">✨ "Saiba o que eu não sabia."</div></div>
+    <h3>10 Erros que Toda Mulher Trans Comete no Início</h3>
+    <div class="error-list">
+      <div class="error-item"><div class="error-num">1</div><div class="error-content"><h4>Comparar sua transição com a de outras</h4><p>Cada corpo responde diferente. Comparação gera ansiedade e desvaloriza seu progresso real.</p></div></div>
+      <div class="error-item"><div class="error-num">2</div><div class="error-content"><h4>Começar a TH sem acompanhamento</h4><p>Automedicação sem exames pode bloquear o crescimento dos seios e causar outros danos permanentes.</p></div></div>
+      <div class="error-item"><div class="error-num">3</div><div class="error-content"><h4>Operar cedo demais</h4><p>Cirurgias antes da TH ter feito seu trabalho desperdiçam dinheiro. Deixe os hormônios trabalharem primeiro.</p></div></div>
+      <div class="error-item"><div class="error-num">4</div><div class="error-content"><h4>Negligenciar a saúde mental</h4><p>Sem suporte psicológico, a transição vira uma montanha-russa sem freios. Invista em psicóloga desde o início.</p></div></div>
+      <div class="error-item"><div class="error-num">5</div><div class="error-content"><h4>Aceitar qualquer relacionamento por medo de ficar sozinha</h4><p>Relacionamentos abusivos são mais comuns quando a autoestima está baixa. Espere o que você merece.</p></div></div>
+      <div class="error-item"><div class="error-num">6</div><div class="error-content"><h4>Esconder a transição de médicos</h4><p>Médicos precisam saber que você está em TH para evitar interações medicamentosas perigosas.</p></div></div>
+      <div class="error-item"><div class="error-num">7</div><div class="error-content"><h4>Não documentar o progresso</h4><p>Fotos mensais são essenciais — você vai precisar delas nos dias de disforia para lembrar o quanto evoluiu.</p></div></div>
+      <div class="error-item"><div class="error-num">8</div><div class="error-content"><h4>Gastar tudo em cirurgias e negligenciar hormônios</h4><p>A TH é a base de tudo. Cirurgias sem TH adequada têm resultado inferior.</p></div></div>
+      <div class="error-item"><div class="error-num">9</div><div class="error-content"><h4>Achar que a transição vai resolver todos os problemas</h4><p>A transição resolve a disforia. Traumas, inseguranças e padrões relacionais precisam de trabalho próprio.</p></div></div>
+      <div class="error-item"><div class="error-num">10</div><div class="error-content"><h4>Não parar de dilatar após SRS</h4><p>A dilatação após redesignação sexual não é opcional. Parar causa fechamento permanente.</p></div></div>
+    </div>
+
+    <h3>Cronograma Ideal da Transição</h3>
+    <table class="tbl">
+      <tr><th>Período</th><th>Prioridade</th><th>Por quê</th></tr>
+      <tr><td>Agora</td><td>Psicóloga + nome social</td><td>Base emocional e legal</td></tr>
+      <tr><td>Mês 1–3</td><td>Iniciar TH com médico</td><td>Quanto antes, maior o resultado</td></tr>
+      <tr><td>Mês 3–12</td><td>Voz + laser facial</td><td>Maior impacto no passing diário</td></tr>
+      <tr><td>Mês 6–12</td><td>Retificação de documentos</td><td>Facilita todo o resto</td></tr>
+      <tr><td>Ano 1–2</td><td>FFS (se desejar)</td><td>Após TH fazer seu trabalho</td></tr>
+      <tr><td>Ano 2+</td><td>Corpo (lipo, mama, BBL)</td><td>TH já redistribuiu — cirurgia complementa</td></tr>
+      <tr><td>Ano 2–3+</td><td>SRS (se desejar)</td><td>Após maturidade emocional e física</td></tr>
+    </table>
+
+    <h3>Glossário Completo</h3>
+    <div class="gloss-grid">
+      <div class="gloss-item"><strong>Disforia de gênero</strong><span>Sofrimento causado pelo desalinhamento entre identidade de gênero e corpo/papel social</span></div>
+      <div class="gloss-item"><strong>Euforia de gênero</strong><span>Alegria profunda ao ser vista e tratada conforme a identidade de gênero</span></div>
+      <div class="gloss-item"><strong>Passing</strong><span>Ser percebida pelo mundo como mulher cis sem que percebam que é trans</span></div>
+      <div class="gloss-item"><strong>TH / THF</strong><span>Terapia Hormonal (Feminizante) — uso de estrogênio e antiandrogênios</span></div>
+      <div class="gloss-item"><strong>FFS</strong><span>Facial Feminization Surgery — cirurgias de feminização facial</span></div>
+      <div class="gloss-item"><strong>SRS / GRS</strong><span>Sex/Gender Reassignment Surgery — cirurgia de redesignação sexual</span></div>
+      <div class="gloss-item"><strong>BBL</strong><span>Brazilian Butt Lift — lipoenxertia glútea</span></div>
+      <div class="gloss-item"><strong>Deadname</strong><span>Nome de nascimento não desejado — nunca use o deadname de alguém sem permissão</span></div>
+      <div class="gloss-item"><strong>Misgendering</strong><span>Usar pronome ou gênero incorreto — intencional ou não, causa disforia</span></div>
+      <div class="gloss-item"><strong>Coming out</strong><span>Revelar a identidade de gênero para outras pessoas</span></div>
+      <div class="gloss-item"><strong>Trans-afirmativo</strong><span>Profissional ou espaço que valida e apoia a identidade trans sem patologizar</span></div>
+      <div class="gloss-item"><strong>Neuroplasticidade</strong><span>Capacidade do cérebro de criar novas conexões e reescrever padrões ao longo da vida</span></div>
+      <div class="gloss-item"><strong>Dilatação</strong><span>Procedimento obrigatório pós-SRS para manter o canal vaginal</span></div>
+      <div class="gloss-item"><strong>Antiandrogênio</strong><span>Medicamento que bloqueia os efeitos da testosterona</span></div>
+      <div class="gloss-item"><strong>Orquiectomia</strong><span>Cirurgia de remoção dos testículos — elimina necessidade de antiandrogênios</span></div>
+      <div class="gloss-item"><strong>Lipoenxertia</strong><span>Transferência de gordura própria para outra área do corpo (BBL, face)</span></div>
+    </div>
+
+    <h3>💌 Carta para a Bianca de 10 Anos Atrás</h3>
+    <div class="quote" style="font-size:15px;line-height:1.9;">
+      "Ei, você.<br><br>
+      Eu sei que você está sofrendo. Eu sei que você acorda todo dia carregando algo que não consegue nomear, uma dor surda que todos ao seu redor fingem não ver — ou que você finge não sentir.<br><br>
+      Quero te dizer: o que você sente é real. Mais real do que tudo que te ensinaram a ser.<br><br>
+      Haverá cirurgias. Haverá dores. Haverá pessoas que irão embora. E haverá dias em que você vai duvidar de tudo. Mas eu prometo: cada passo vai valer.<br><br>
+      Porque do outro lado está uma mulher que olha no espelho e finalmente se reconhece. Que ri de verdade. Que ama seu corpo. Que ajuda outras mulheres a encontrarem o caminho que você está prestes a começar.<br><br>
+      Vai. Você está pronta.<br><br>
+      Com amor,<br>
+      <em>Bianca</em>"
+    </div>
+
+    <h3>Mensagem Final</h3>
+    <div class="ibox" style="border-color:var(--blue);">
+      <div class="icon">💙</div>
+      <h4>Para Você que Chegou até Aqui</h4>
+      <p>Você não está sozinha. Nunca esteve. Existem milhares de mulheres que passaram por exatamente o que você está sentindo — e chegaram do outro lado.<br><br>
+      A transição não é uma linha reta. Tem dias difíceis, tem dias mágicos. Tem retrocessos e avanços inesperados. Mas cada passo que você dá — por menor que pareça — é um ato de coragem extraordinária.<br><br>
+      Este guia foi escrito com a única intenção de fazer seu caminho um pouco mais fácil do que foi o meu. Se você aprendeu algo aqui, compartilha com quem precisa ver isso.<br><br>
+      <strong>Eu acredito em você. Completamente.</strong><br><br>
+      — Bianca Nunes 💙🩷🤍</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ANTES/DEPOIS -->
+<div class="page" id="page-11">
+<div class="ch-page">
+  <div class="ch-hero"><div class="ch-num-big">📸</div><h2>Antes <span>& Depois</span></h2><p>Arraste o slider para ver a transformação real de Bianca Nunes — de militar a mulher.</p></div>
+  <div class="ch-body">
+    <h3>Arraste para Ver a Transformação</h3>
+    <p>Da farda ao batom vermelho. Arraste o slider da esquerda para a direita para revelar a transformação.</p>
+    <div style="display:flex;gap:20px;max-width:720px;margin:20px 0;">
+      <div style="flex:1;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.14);position:relative;">
+        <div style="background-image:url('assets/img/antes_depois.jpg');background-size:200% 100%;background-position:0% center;height:380px;"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:12px;background:linear-gradient(transparent,rgba(0,0,0,.75));text-align:center;">
+          <span style="color:#fff;font-family:sans-serif;font-weight:700;font-size:16px;">⚔️ Antes</span>
+        </div>
+      </div>
+      <div style="flex:1;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.14);position:relative;">
+        <div style="background-image:url('assets/img/antes_depois.jpg');background-size:200% 100%;background-position:100% center;height:380px;"></div>
+        <div style="position:absolute;bottom:0;left:0;right:0;padding:12px;background:linear-gradient(transparent,rgba(0,0,0,.75));text-align:center;">
+          <span style="color:#fff;font-family:sans-serif;font-weight:700;font-size:16px;">💄 Depois</span>
+        </div>
+      </div>
+    </div>
+    <div class="quote">"Cada foto de depois é uma prova de coragem. Você chegou até aqui — e vai muito mais longe."<br><small>— Bianca Nunes</small></div>
+    <div class="ibox"><div class="icon">📸</div><h4>Mais Fotos em Breve</h4><p>Esta seção receberá mais fotos do processo completo — linha do tempo mês a mês, fotos das cirurgias, resultado final. A história continua sendo escrita e inspirando outras mulheres.</p></div>
+  </div>
+</div>
+</div>
+
+<!-- AUTORA -->
+<div class="page" id="page-12">
+<div class="author-page">
+  <div class="author-inner">
+    <div class="author-img-wrap"><img src="assets/img/autora_principal.jpg" alt="Bianca Nunes"/></div>
+    <div class="author-txt">
+      <div class="author-tagline">🏳️‍⚧️ Sobre a Autora</div>
+      <h2>Bianca <span>Nunes</span></h2>
+      <p>Bianca Nunes é estudante de <strong>neurociência</strong>, ex-militar e autora de múltiplos livros sobre traumas e comportamento humano.</p>
+      <p>Nascida em <strong>Maceió, Alagoas</strong>, e criada em uma aldeia indígena (Wassu Cocal), Bianca é filha de mãe indígena e pai negro — carregando em si a força e a resiliência de dois povos que sobreviveram ao impossível.</p>
+      <p>Iniciou sua transição em <strong>2019</strong> e realizou <strong>23 cirurgias</strong> de feminização facial, vocal, corporal e mudança de sexo — com os melhores especialistas do Brasil e do mundo.</p>
+      <p>Viajou pelo mundo, conhecendo culturas que moldaram sua visão única sobre identidade, corpo e mente.</p>
+      <p>Foi vítima de <strong>tráfico humano na Tailândia</strong> — uma experiência que a levou a mergulhar no estudo da neurociência e neuroplasticidade como ferramentas de cura. Ela sobreviveu. E floresceu.</p>
+      <p>Hoje, Bianca compartilha sua jornada para provar que <strong>a transformação é sempre possível</strong> — não importa de onde você vem.</p>
+      <div class="author-facts">
+        <span class="fact">🧠 Neurociência</span><span class="fact">⚔️ Ex-Militar</span><span class="fact">🏛️ Indígena & Negra</span><span class="fact">✂️ 23 Cirurgias</span><span class="fact">🌍 Viajante</span><span class="fact">💜 Sobrevivente</span><span class="fact">📚 Autora</span>
+      </div>
+      <div class="quote" style="margin-top:22px;color:rgba(255,255,255,.82);border-left-color:var(--pink);">"Minha história não começou bonita. Mas eu escolhi que ela terminaria assim."<br><small>— Bianca Nunes</small></div>
+    </div>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div id="bottom-nav">
+  <button id="btn-prev" onclick="prevPage()">← Anterior</button>
+  <button id="btn-next" onclick="nextPage()">Próximo →</button>
+</div>
+
+<script>
+const TOTAL=13;let cur=0;
+function goTo(n){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-btns button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('page-'+n).classList.add('active');
+  const nb=document.getElementById('nav-'+n);if(nb)nb.classList.add('active');
+  document.getElementById('pg-ind').textContent=(n+1)+'/'+TOTAL;
+  document.getElementById('prog').style.width=((n+1)/TOTAL*100)+'%';
+  document.getElementById('btn-prev').style.opacity=n===0?'0.35':'1';
+  document.getElementById('btn-next').textContent=n===TOTAL-1?'🏁 Fim':'Próximo →';
+  document.getElementById('page-'+n).scrollTop=0;cur=n;
+}
+function nextPage(){if(cur<TOTAL-1)goTo(cur+1);}
+function prevPage(){if(cur>0)goTo(cur-1);}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowRight')nextPage();if(e.key==='ArrowLeft')prevPage();});
+function initSlider(wid,aid,hid){
+  const w=document.getElementById(wid),a=document.getElementById(aid),h=document.getElementById(hid);
+  let drag=false;
+  function set(x){const r=w.getBoundingClientRect();let p=(x-r.left)/r.width;p=Math.max(.02,Math.min(.98,p));a.style.clipPath=`inset(0 ${(1-p)*100}% 0 0)`;h.style.left=(p*100)+'%';}
+  w.addEventListener('mousedown',e=>{drag=true;set(e.clientX);e.preventDefault();});
+  w.addEventListener('touchstart',e=>{drag=true;set(e.touches[0].clientX);},{passive:true});
+  document.addEventListener('mousemove',e=>{if(drag)set(e.clientX);});
+  document.addEventListener('touchmove',e=>{if(drag)set(e.touches[0].clientX);},{passive:true});
+  document.addEventListener('mouseup',()=>drag=false);
+  document.addEventListener('touchend',()=>drag=false);
+}
+initSlider('ba1','ba1-after','ba1-handle');
+goTo(0);
+</script>
+</body>
+</html>
